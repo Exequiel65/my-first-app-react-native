@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 import React from "react";
 import RepositoryStats from "./RepositoryStats";
 import theme from "../theme";

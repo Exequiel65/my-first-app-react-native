@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Button } from 'react-native'
 import React from 'react'
 import StyledText from './StyledText'
 
@@ -7,24 +7,16 @@ const parseThousands = ( value )=>{
 }
 
 export default function RepositoryStats(props) {
+  console.log(props.teachers)
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-around'}}>
-      <View>
-        <StyledText align='center' fontWeight='bold' >{parseThousands(props.stargazersCount)}</StyledText>
-        <StyledText align='center' >Starts</StyledText>
+    <View style={{ flexDirection: 'column', alignItems: 'flex-start'}}>
+      <StyledText align='flex-start' fontWeight='bold'>Profesores: </StyledText>
+      {props? props.teachers.map(teach =>(
+      <View style={{ flex: 2, flexDirection: 'row' ,justifyContent: 'space-around'}}>
+        <StyledText align='center' >{`${teach.firstName} ${teach.lastName} `}</StyledText>
       </View>
-      <View>
-        <StyledText align='center' fontWeight='bold' >{ parseThousands(props.forksCount)}</StyledText>
-        <StyledText align='center' >Forks</StyledText>
-      </View>
-      <View>
-        <StyledText align='center' fontWeight='bold' >{props.reviewCount}</StyledText>
-        <StyledText align='center' >Review</StyledText>
-      </View>
-      <View>
-        <StyledText align='center' fontWeight='bold' >{props.ratingAverage}</StyledText>
-        <StyledText align='center' >Rating</StyledText>
-      </View>
+        )) : ""}
+      <Button title='Ver' style={{margin: 10}} />
     </View>
   )
 }

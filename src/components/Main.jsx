@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import RepositorieList from './RepositorieList';
 import AppBar from './AppBar';
 import { Switch, Route } from 'react-router-native'
+import Login from '../pages/login';
 const Main = () => {
     return (
         <View style={{ flex : 1}} >
@@ -12,7 +13,7 @@ const Main = () => {
                     <RepositorieList />
                 </Route>
                 <Route path='/signin' exact>
-                    <Text >Working on it</Text>
+                    <Login />
                 </Route>
             </Switch>
         </View>
